@@ -20,6 +20,7 @@ export default function Current() {
                 </div>
             </div>
             <p>The Highs can reach up to 33°</p>
+            
         </div>
         </center>
     )
