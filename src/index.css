@@ -1,0 +1,72 @@
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,0.7) 0%, rgba(9,9,121,0.7) 35%, rgba(0,212,255,0.6) 100%);
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: aliceblue;
+}
+#nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60%;
+    justify-content: center;
+
+
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search_bar{
+    width: 300px;
+    height: 30px;
+    border: hidden;
+    border-radius: 5px 0 0 5px;
+    padding: 0 20px;
+}
+
+
+button{
+    width: fit-content; 
+    height: fit-content;
+    border: none;
+    height: 30px;
+    background: white;
+    border-radius: 0 5px 5px 0;
+}
+.search_icon{
+    width: 15px;
+}
+.weather_icon{
+    width: 80px;
+}
+#current_day{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 70%;
+    position: relative;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    text-align: left;
+}
+#current_day h1{
+    width: fit-content;
+}
+.current{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+.current h1{
+    font-size: 40px;
+}
+.container{
+    line-height: 10px;
+    font-size: 15px;
+    text-align: left;
+}
