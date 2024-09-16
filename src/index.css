@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(90deg, rgba(2,0,36,0.7) 0%, rgba(9,9,121,0.7) 35%, rgba(0,212,255,0.6) 100%);
-    font-family: "Roboto Slab", serif;
+    font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: rgb(255, 255, 255);
