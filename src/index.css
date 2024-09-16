@@ -41,6 +41,7 @@ button{
 }
 .weather_icon{
     width: 80px;
+    height: 80px;
 }
 #current_day{
     display: flex;
@@ -81,4 +82,27 @@ button{
 }
 .other_compo h4{
     color: rgba(255, 255, 255, 0.863);
+}
+
+#coming{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.coming_weather{
+    display: flex;
+    flex-direction: row;
+    gap: 19px;  
+    justify-content: center;
+}
+.coming_comp{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    width: 150px;
 }

@@ -12,7 +12,7 @@ export default function Current() {
             <div id='current_day'>
                 <h1>Delhi</h1>
                 <div className="current">
-                    <img src={cloudIcon} alt="" className='weather_icon'/>
+                    <img src={clearIcon} alt="" className='weather_icon'/>
                     <h1>33°</h1>
                     <div className="container">
                         <p>Haze</p>
@@ -25,7 +25,7 @@ export default function Current() {
                     {/* wind humidity pressure  */}
                     <div className="wind other_compo">
                         <h4>Wind</h4>
-                        <p>5m/s</p>
+                        <p>5 m/s</p>
                     </div>
                     <div className="humidity other_compo">
                         <h4>Humidity</h4>
@@ -33,7 +33,7 @@ export default function Current() {
                     </div>
                     <div className="pressure other_compo">
                         <h4>Air Pressure</h4>
-                        <p>1005mb</p>
+                        <p>1005 mb</p>
                     </div>
                 </div>
             </div>
