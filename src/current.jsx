@@ -21,8 +21,20 @@ export default function Current() {
                 
                 </div>
                 <p>The Highs can reach up to 33°</p>
-                <div className="other">
-                    
+                <div id="other">
+                    {/* wind humidity pressure  */}
+                    <div className="wind other_compo">
+                        <h4>Wind</h4>
+                        <p>5m/s</p>
+                    </div>
+                    <div className="humidity other_compo">
+                        <h4>Humidity</h4>
+                        <p>71%</p>
+                    </div>
+                    <div className="pressure other_compo">
+                        <h4>Air Pressure</h4>
+                        <p>1005mb</p>
+                    </div>
                 </div>
             </div>
         </center>

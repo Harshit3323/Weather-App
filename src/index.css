@@ -3,7 +3,7 @@ body{
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 #nav{
     display: flex;
@@ -45,7 +45,7 @@ button{
 #current_day{
     display: flex;
     flex-direction: column;
-    padding: 0 30px;
+    padding: 0 30px 20px;
     width: 70%;
     position: relative;
     justify-content: center;
@@ -69,4 +69,16 @@ button{
     line-height: 10px;
     font-size: 15px;
     text-align: left;
+}
+#other{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.other_compo{
+    line-height: 5px;
+    font-size: small;
+}
+.other_compo h4{
+    color: rgba(255, 255, 255, 0.863);
 }
