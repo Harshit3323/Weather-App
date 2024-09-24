@@ -5,11 +5,11 @@ import NextWeek from './nextWeek'
 import searchIcon from './assets/search.png'
 function App() {
   const [city,setCity] = useState('');
+  var cityname = document.getElementById('cityName');
   function sendSearch() {
-    var city = document.getElementById('cityName');
-    setCity(city.value);
-    city.innerHTML(null);
+    setCity(cityname.value);
   }
+  
   return (
     <div id='app'>
       <div id="nav">

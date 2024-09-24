@@ -102,7 +102,12 @@ button{
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
+    justify-content: center;
     width: 150px;
+}
+.coming_comp .weather_icon{
+    width: 60px;
+    height: 60px;
 }
