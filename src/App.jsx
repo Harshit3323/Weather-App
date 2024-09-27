@@ -4,25 +4,27 @@ import Current from './current'
 import NextWeek from './nextWeek'
 import searchIcon from './assets/search.png'
 function App() {
-  const [city,setCity] = useState('');
+  const [location,setLocation] = useState('');
+  const handleSearch = () => {
   var cityname = document.getElementById('cityName');
-  function sendSearch() {
-    setCity(cityname.value);
-  }
-  
+    setLocation(cityname.value);
+  };
+  var loc = location.split(', ');
+  var city = loc[0];
+  var cont = loc[1];
   return (
     <div id='app'>
       <div id="nav">
         <h1>Weather</h1>
         <div className="search">
           <input type="search" name="" id="cityName" placeholder="Search City" className="search_bar"/>
-          <button onClick={sendSearch}>
+          <button   onClick={handleSearch}>
             <img src={searchIcon} alt="" className="search_icon"/>
             </button>
         </div>
       </div>
       <Current city = {city}/>
-      <NextWeek/>
+      <NextWeek city = {city} country={cont}/>
     </div>
   )
 }

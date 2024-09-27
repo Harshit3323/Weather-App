@@ -11,8 +11,7 @@ body{
     align-items: center;
     gap: 60%;
     justify-content: center;
-
-
+    margin-bottom: 10px;
 }
 .search{
     display: flex;

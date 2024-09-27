@@ -34,7 +34,7 @@ export default function Current({city}) {
     const [today,setToday] = useState('');
     const search = async (cityname)=>{
         try{
-          const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${import.meta.env.VITE_OWM_ID}&units=metric`;
+          const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=8715ff55a242861520cd1ebc7c042646&units=metric`;
           const res = await fetch(url);
           const data = await res.json();
           setToday({
@@ -58,7 +58,6 @@ export default function Current({city}) {
           search(city);
         }
       }, [city]); 
-    console.log(today);
     useEffect(() => {
       search("delhi")
     }, [])
