@@ -17,7 +17,7 @@ function App() {
       <div id="nav">
         <h1>Weather</h1>
         <div className="search">
-          <input type="search" name="" id="cityName" placeholder="Search City" className="search_bar"/>
+          <input type="search" name="" id="cityName" placeholder="Search City (e.g delhi, in)" className="search_bar"/>
           <button   onClick={handleSearch}>
             <img src={searchIcon} alt="" className="search_icon"/>
             </button>

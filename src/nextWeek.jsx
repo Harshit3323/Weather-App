@@ -10,7 +10,6 @@ import snow from './assets/13d.png'
 import haze from './assets/50d.png'
 import { useState,useEffect } from 'react'
 export default function NextWeek ({city, country}) {
-    const coun = 'in';
     const iconMap = {
         "800" : clear,
         "801" : cloudy,
