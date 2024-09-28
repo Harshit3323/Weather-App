@@ -56,6 +56,13 @@ button{
 #current_day h1{
     width: fit-content;
 }
+.currentDay{
+    margin-bottom: 0;
+    line-height: 30px;
+}
+.location{
+    margin-top: 0;
+}
 .current{
     display: flex;
     flex-direction: row;

@@ -10,6 +10,7 @@ import snow from './assets/13d.png'
 import haze from './assets/50d.png'
 import { useState, useEffect } from 'react'
 export default function Current({city}) {
+    const dayMap = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const iconMap = {
         "01d" : clear,
         "01n" : clearN,
@@ -64,7 +65,12 @@ export default function Current({city}) {
     return (
         <center>
             <div id='current_day'>
-                <h1>{today.location}</h1>
+                <p className='currentDay'>
+                    Current Weather 
+                    <br />
+                    {new Date().getHours()}:{new Date().getMinutes()}
+                </p>
+                <h1 className='location'>{today.location}</h1>
                 <div className="current">
                     <img src={iconMap[today.weather_icon]} alt="" className='weather_icon'/>
                     <h1>{today.temp}°</h1>

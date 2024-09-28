@@ -59,7 +59,7 @@ export default function NextWeek ({city, country}) {
     const [daysix,setDaySix] = useState('');
     const search = async (cityname, countryname)=>{
         try{
-            const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityname},${countryname}&key=0291198a5217478796c2f3f56c8782f7`;
+            const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityname},${countryname}&key=0291198a5217478796c2f3f56c8782f7&days=7`;
             const res = await fetch(url);
             const data = await res.json();
             setDayOne({
