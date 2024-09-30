@@ -63,38 +63,38 @@ export default function NextWeek ({city, country}) {
             const res = await fetch(url);
             const data = await res.json();
             setDayOne({
-                max : Math.floor(data.data[1].app_max_temp),
-                min : Math.floor(data.data[1].app_min_temp),
+                max : Math.floor(data.data[1].max_temp),
+                min : Math.floor(data.data[1].min_temp),
                 weather_icon : data.data[1].weather.code,
             
             });
             setDayTwo({
-                max : Math.floor(data.data[2].app_max_temp),
-                min : Math.floor(data.data[2].app_min_temp),
+                max : Math.floor(data.data[2].max_temp),
+                min : Math.floor(data.data[2].min_temp),
                 weather_icon : data.data[2].weather.code,
             
             });
             setDayThree({
-                max : Math.floor(data.data[3].app_max_temp),
-                min : Math.floor(data.data[3].app_min_temp),
+                max : Math.floor(data.data[3].max_temp),
+                min : Math.floor(data.data[3].min_temp),
                 weather_icon : data.data[3].weather.code,
             
             });
             setDayFour({
-                max : Math.floor(data.data[4].app_max_temp),
-                min : Math.floor(data.data[4].app_min_temp),
+                max : Math.floor(data.data[4].max_temp),
+                min : Math.floor(data.data[4].min_temp),
                 weather_icon : data.data[4].weather.code,
             
             });
             setDayFive({
-                max : Math.floor(data.data[5].app_max_temp),
-                min : Math.floor(data.data[5].app_min_temp),
+                max : Math.floor(data.data[5].max_temp),
+                min : Math.floor(data.data[5].min_temp),
                 weather_icon : data.data[5].weather.code,
             
             });
             setDaySix({
-                max : Math.floor(data.data[6].app_max_temp),
-                min : Math.floor(data.data[6].app_min_temp),
+                max : Math.floor(data.data[6].max_temp),
+                min : Math.floor(data.data[6].min_temp),
                 weather_icon : data.data[6].weather.code,
             
             });
