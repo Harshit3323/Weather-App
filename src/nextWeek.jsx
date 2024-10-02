@@ -50,13 +50,25 @@ export default function NextWeek ({city, country}) {
         "232" : storm,
         "233" : storm,
     }
-    
+    const dayMap = ['sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat']
     const [dayone,setDayOne] = useState('');
     const [daytwo,setDayTwo] = useState('');
     const [daythree,setDayThree] = useState('');
     const [dayfour,setDayFour] = useState('');
     const [dayfive,setDayFive] = useState('');
     const [daysix,setDaySix] = useState('');
+    const day = new Date().getDay();
+    var dayNames = [];
+    var count = day;
+    for (var i = 0; i<=5; i++){
+        if(count==6){
+            count = 0;
+            dayNames.push(dayMap[count]);
+        } else{
+            ++count;
+            dayNames.push(dayMap[count]);
+        }
+    }
     const search = async (cityname, countryname)=>{
         try{
             const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityname},${countryname}&key=0291198a5217478796c2f3f56c8782f7&days=7`;
@@ -66,36 +78,42 @@ export default function NextWeek ({city, country}) {
                 max : Math.floor(data.data[1].max_temp),
                 min : Math.floor(data.data[1].min_temp),
                 weather_icon : data.data[1].weather.code,
+                day : dayNames[0],
             
             });
             setDayTwo({
                 max : Math.floor(data.data[2].max_temp),
                 min : Math.floor(data.data[2].min_temp),
                 weather_icon : data.data[2].weather.code,
+                day : dayNames[1],
             
             });
             setDayThree({
                 max : Math.floor(data.data[3].max_temp),
                 min : Math.floor(data.data[3].min_temp),
                 weather_icon : data.data[3].weather.code,
+                day : dayNames[2],
             
             });
             setDayFour({
                 max : Math.floor(data.data[4].max_temp),
                 min : Math.floor(data.data[4].min_temp),
                 weather_icon : data.data[4].weather.code,
+                day : dayNames[3],
             
             });
             setDayFive({
                 max : Math.floor(data.data[5].max_temp),
                 min : Math.floor(data.data[5].min_temp),
                 weather_icon : data.data[5].weather.code,
+                day : dayNames[4],
             
             });
             setDaySix({
                 max : Math.floor(data.data[6].max_temp),
                 min : Math.floor(data.data[6].min_temp),
                 weather_icon : data.data[6].weather.code,
+                day : dayNames[5],
             
             });
           
@@ -113,52 +131,70 @@ export default function NextWeek ({city, country}) {
             search('delhi', 'in');
         }
     }, []);
-
+    console.log(dayone);
     return (
         <>
             <div id="coming">
                 <h3>Coming Week</h3>
                 <div className="coming_weather">
-                    <div className="coming_comp">
-                        <img src={iconMap[dayone.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{dayone.max}°</p>
-                            <p className="min">{dayone.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{dayone.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[dayone.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{dayone.max}°</p>
+                                <p className="min">{dayone.min}°</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="coming_comp">
-                        <img src={iconMap[daytwo.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{daytwo.max}°</p>
-                            <p className="min">{daytwo.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{daytwo.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[daytwo.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{daytwo.max}°</p>
+                                <p className="min">{daytwo.min}°</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="coming_comp">
-                        <img src={iconMap[daythree.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{daythree.max}°</p>
-                            <p className="min">{daythree.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{daythree.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[daythree.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{daythree.max}°</p>
+                                <p className="min">{daythree.min}°</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="coming_comp">
-                        <img src={iconMap[dayfour.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{dayfour.max}°</p>
-                            <p className="min">{dayfour.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{dayfour.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[dayfour.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{dayfour.max}°</p>
+                                <p className="min">{dayfour.min}°</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="coming_comp">
-                        <img src={iconMap[dayfive.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{dayfive.max}°</p>
-                            <p className="min">{dayfive.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{dayfive.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[dayfive.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{dayfive.max}°</p>
+                                <p className="min">{dayfive.min}°</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="coming_comp">
-                        <img src={iconMap[daysix.weather_icon]} alt="" className='weather_icon'/>
-                        <div className="info">
-                            <p className="max">{daysix.max}°</p>
-                            <p className="min">{daysix.min}°</p>
+                    <div className="coming_component">
+                        <p><strong>{daysix.day}</strong></p>
+                        <div className="coming_comp">
+                            <img src={iconMap[daysix.weather_icon]} alt="" className='weather_icon'/>
+                            <div className="info">
+                                <p className="max">{daysix.max}°</p>
+                                <p className="min">{daysix.min}°</p>
+                            </div>
                         </div>
                     </div>
                 </div>

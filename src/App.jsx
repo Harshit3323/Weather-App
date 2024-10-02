@@ -20,7 +20,7 @@ function App() {
           <input type="search" name="" id="cityName" placeholder="Search City (e.g delhi, in)" className="search_bar"/>
           <button   onClick={handleSearch}>
             <img src={searchIcon} alt="" className="search_icon"/>
-            </button>
+          </button>
         </div>
       </div>
       <Current city = {city}/>

@@ -9,7 +9,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 60%;
+    gap: 50%;
     justify-content: center;
     margin-bottom: 10px;
 }
@@ -19,8 +19,8 @@ body{
     align-items: center;
 }
 .search_bar{
-    width: 300px;
-    height: 30px;
+    width: 18.75rem;
+    height: 1.875rem;
     border: hidden;
     border-radius: 5px 0 0 5px;
     padding: 0 20px;
@@ -31,7 +31,7 @@ button{
     width: fit-content; 
     height: fit-content;
     border: none;
-    height: 30px;
+    height: 1.875rem;
     background: white;
     border-radius: 0 5px 5px 0;
 }
@@ -100,15 +100,22 @@ button{
 .coming_weather{
     display: flex;
     flex-direction: row;
-    gap: 19px;  
+    gap: 3%;  
     justify-content: center;
 }
-.coming_comp{
+.coming_component{
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    line-height: ;
+
+}
+.coming_component > p {
+    margin: 10px 0 0 20px;
+}
+.coming_comp{
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     width: 150px;
@@ -116,4 +123,27 @@ button{
 .coming_comp .weather_icon{
     width: 60px;
     height: 60px;
+}
+@media (max-width: 1000px) {
+    .coming_weather{
+        flex-wrap: wrap;
+    }
+    .coming_component{
+        margin-bottom: 2%;
+    }
+    #current_day{
+        width: 81%;
+    }
+}
+@media (max-width: 800px) {
+    .search{
+        width: 15%;
+    }
+    #nav h1{
+        font-size: 1.5em;
+    }
+    #nav{
+        justify-content: start;
+        gap: 50%;
+    }
 }
