@@ -23,13 +23,12 @@ body{
     height: 1.875rem;
     border: hidden;
     border-radius: 5px 0 0 5px;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
 }
 
 
 button{
     width: fit-content; 
-    height: fit-content;
     border: none;
     height: 1.875rem;
     background: white;
@@ -106,7 +105,6 @@ button{
 .coming_component{
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    line-height: ;
 
 }
 .coming_component > p {
@@ -137,13 +135,31 @@ button{
 }
 @media (max-width: 800px) {
     .search{
-        width: 15%;
+        width: 15.2rem;
     }
     #nav h1{
         font-size: 1.5em;
     }
     #nav{
-        justify-content: start;
-        gap: 50%;
+        justify-content: center;
+        gap: 42%;
+    }
+}
+@media (max-width: 650px) {
+    #nav{
+        gap: 15%;
+        justify-content: center;
+    }
+    .search{
+        width: 11rem;
+    }
+    .search_bar{
+        width: 9rem;
+    }
+    .search_icon{
+        width: 1rem;
+    }
+    .container{
+        line-height: 18px;
     }
 }
