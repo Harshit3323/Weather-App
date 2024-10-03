@@ -48,6 +48,7 @@ export default function Current({city}) {
             humidity : data.main.humidity,
             pressure : data.main.pressure,
             weather_icon : data.weather[0].icon,
+
             
           });
         } catch {
@@ -60,15 +61,15 @@ export default function Current({city}) {
         }
       }, [city]); 
     useEffect(() => {
-      search("delhi")
+      search("tokyo")
     }, [])
+    console.log(today.time)
     return (
         <center>
             <div id='current_day'>
                 <p className='currentDay'>
                     Current Weather 
                     <br />
-                    {new Date().getHours()}:{new Date().getMinutes()}
                 </p>
                 <h1 className='location'>{today.location}</h1>
                 <div className="current">
