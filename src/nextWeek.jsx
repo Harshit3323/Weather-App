@@ -9,46 +9,26 @@ import storm from './assets/11d.png'
 import snow from './assets/13d.png'
 import haze from './assets/50d.png'
 import { useState,useEffect } from 'react'
-export default function NextWeek ({city, country}) {
+export default function NextWeek ({city,}) {
     const iconMap = {
-        "800" : clear,
-        "801" : cloudy,
-        "802" : scattered,
-        "803" : broken,
-        "804" : broken,
-        "700" : haze,
-        "711" : haze,
-        "721" : haze,
-        "731" : haze,
-        "741" : haze,
-        "751" : haze,
-        "600" : snow,
-        "601" : snow,
-        "602" : snow,
-        "610" : snow,
-        "611" : snow,
-        "612" : snow,
-        "621" : snow,
-        "622" : snow,
-        "623" : snow,
-        "300" : shower,
-        "301" : shower,
-        "302" : shower,
-        "500" : shower,
-        "501" : shower,
-        "502" : shower,
-        "511" : shower,
-        "520" : shower,
-        "521" : shower,
-        "522" : shower,
-        "900" : shower,
-        "200" : storm,
-        "201" : storm,
-        "202" : storm,
-        "230" : storm,
-        "231" : storm,
-        "232" : storm,
-        "233" : storm,
+        "01d" : clear,
+        "01n" : clearN,
+        "02d" : cloudy,
+        "02n" : cloudyN,
+        "03d" : scattered,
+        "03n" : scattered,
+        "04d" : broken,
+        "04n" : broken,
+        "09d" : shower,
+        "09n" : shower,
+        "10d" : shower,
+        "10n" : shower,
+        "11d" : storm,
+        "11n" : storm,
+        "13d" : snow,
+        "13n" : snow,
+        "50d" : haze,
+        "50n" : haze,
     }
     const dayMap = ['sun', 'mon', 'tue', 'wed', 'thur', 'fri', 'sat']
     const [dayone,setDayOne] = useState('');
@@ -69,50 +49,50 @@ export default function NextWeek ({city, country}) {
             dayNames.push(dayMap[count]);
         }
     }
-    const search = async (cityname, countryname)=>{
+    const search = async (cityname)=>{
         try{
-            const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityname},${countryname}&key=0291198a5217478796c2f3f56c8782f7&days=7`;
+            const url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${cityname}&cnt=7&appid=bd5e378503939ddaee76f12ad7a97608&units=metric`;
             const res = await fetch(url);
             const data = await res.json();
             setDayOne({
-                max : Math.floor(data.data[1].max_temp),
-                min : Math.floor(data.data[1].min_temp),
-                weather_icon : data.data[1].weather.code,
+                max : Math.floor(data.list[1].temp.max),
+                min : Math.floor(data.list[1].temp.min),
+                weather_icon : data.list[1].weather[0].icon,
                 day : dayNames[0],
             
             });
             setDayTwo({
-                max : Math.floor(data.data[2].max_temp),
-                min : Math.floor(data.data[2].min_temp),
-                weather_icon : data.data[2].weather.code,
+                max : Math.floor(data.list[2].temp.max),
+                min : Math.floor(data.list[2].temp.min),
+                weather_icon : data.list[2].weather[0].icon,
                 day : dayNames[1],
             
             });
             setDayThree({
-                max : Math.floor(data.data[3].max_temp),
-                min : Math.floor(data.data[3].min_temp),
-                weather_icon : data.data[3].weather.code,
+                max : Math.floor(data.list[3].temp.max),
+                min : Math.floor(data.list[3].temp.min),
+                weather_icon : data.list[3].weather[0].icon,
                 day : dayNames[2],
             
             });
             setDayFour({
-                max : Math.floor(data.data[4].max_temp),
-                min : Math.floor(data.data[4].min_temp),
-                weather_icon : data.data[4].weather.code,
+                max : Math.floor(data.list[4].temp.max),
+                min : Math.floor(data.list[4].temp.min),
+                weather_icon : data.list[4].weather[0].icon,
                 day : dayNames[3],
             
             });
             setDayFive({
-                max : Math.floor(data.data[5].max_temp),
-                min : Math.floor(data.data[5].min_temp),
-                weather_icon : data.data[5].weather.code,
+                max : Math.floor(data.list[5].temp.max),
+                min : Math.floor(data.list[5].temp.min),
+                weather_icon : data.list[5].weather[0].icon,
                 day : dayNames[4],
             
             });
             setDaySix({
-                max : Math.floor(data.data[6].max_temp),
-                min : Math.floor(data.data[6].min_temp),
-                weather_icon : data.data[6].weather.code,
+                max : Math.floor(data.list[6].temp.max),
+                min : Math.floor(data.list[6].temp.min),
+                weather_icon : data.list[6].weather[0].icon,
                 day : dayNames[5],
             
             });
@@ -122,16 +102,15 @@ export default function NextWeek ({city, country}) {
         }
     }
     useEffect(() => {
-        if (city && country) { 
-          search(city, country);
+        if (city) { 
+          search(city);
         }
-      }, [city, country]); 
+      }, [city]); 
     useEffect(() => {
-        if(!city && !country){
-            search('delhi', 'in');
+        if(!city){
+            search('delhi');
         }
     }, []);
-    console.log(dayone);
     return (
         <>
             <div id="coming">
