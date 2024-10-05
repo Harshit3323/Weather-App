@@ -38,6 +38,9 @@ export default function Current({city}) {
           const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=8715ff55a242861520cd1ebc7c042646&units=metric`;
           const res = await fetch(url);
           const data = await res.json();
+          if(data.cod != "200"){
+            alert(`API error: ${data.message}`)
+          }
           setToday({
             location : data.name,
             temp : Math.floor(data.main.temp),
@@ -48,7 +51,7 @@ export default function Current({city}) {
             humidity : data.main.humidity,
             pressure : data.main.pressure,
             weather_icon : data.weather[0].icon,
-
+            country : data.sys.country,
             
           });
         } catch {
@@ -61,7 +64,7 @@ export default function Current({city}) {
         }
       }, [city]); 
     useEffect(() => {
-      search("tokyo")
+      search("delhi")
     }, [])
     console.log(today.time)
     return (
@@ -71,7 +74,11 @@ export default function Current({city}) {
                     Current Weather 
                     <br />
                 </p>
-                <h1 className='location'>{today.location}</h1>
+                <div className="location">
+                    <h1 className='location'>{today.location}  </h1>
+                    <p>{today.country}</p>
+                </div>
+                
                 <div className="current">
                     <img src={iconMap[today.weather_icon]} alt="" className='weather_icon'/>
                     <h1>{today.temp}°</h1>

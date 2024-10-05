@@ -6,14 +6,20 @@ import searchIcon from './assets/search.png'
 function App() {
   const [location,setLocation] = useState('');
   const handleSearch = () => {
-  var cityname = document.getElementById('cityName');
-    setLocation(cityname.value);
+    var cityname = document.getElementById('cityName');
+    if(cityname.value == ""){
+      alert("Error: Please enter a city name.")
+    } else{
+      setLocation(cityname.value);
+    }
+    
   };
   var loc = location.split(', ');
   var city = loc[0];
   var cont = loc[1];
   document.addEventListener('keydown', (event)=>{
     if(event.key =='Enter'){
+      
       handleSearch();
     }
   })
