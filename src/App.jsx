@@ -14,9 +14,7 @@ function App() {
     }
     
   };
-  var loc = location.split(', ');
-  var city = loc[0];
-  var cont = loc[1];
+ 
   document.addEventListener('keydown', (event)=>{
     if(event.key =='Enter'){
       
@@ -34,8 +32,8 @@ function App() {
           </button>
         </div>
       </div>
-      <Current city = {city}/>
-      <NextWeek city = {city} country={cont}/>
+      <Current city = {location}/>
+      <NextWeek city = {location}/>
     </div>
   )
 }
